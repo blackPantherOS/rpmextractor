@@ -1,0 +1,9 @@
+{
+    "Name" : "RpmExtractor",
+    "Id" :   "org.kde.rpmextractor",
+    "MimeTypes" : {
+        "application/x-rpm": { "Version" : "0.0" },
+        "application/vnd.rpm"      : { "Version" : "0.0" }
+    }
+}
+

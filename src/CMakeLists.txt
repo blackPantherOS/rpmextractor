@@ -1,9 +1,19 @@
 
-set(RPMThumbnail_SRCS rpmcreator.cpp)
+if(librpm_FOUND AND KF5Config_FOUND AND Qt5Gui_FOUND)
+    add_library(kfilemetadata_rpmextractor MODULE rpmextractor.cpp )
+    target_link_libraries( kfilemetadata_rpmextractor
+        KF5::FileMetaData
+        KF5::ConfigCore
+        Qt5::Xml
+        Qt5::Gui
+        librpm
+    )
 
-qt4_add_resources(RPMThumbnail_SRCS rpmthumbnail.qrc)
-
-kde4_add_plugin(rpmthumbnail ${RPMThumbnail_SRCS})
+    set_target_properties(kfilemetadata_rpmextractor PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/kf5/kfilemetadata")
+    install(
+    TARGETS kfilemetadata_rpmextractor
+    DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kfilemetadata)
+endif()
 
 target_link_libraries(rpmthumbnail ${KDE4_KIO_LIBS} )
 
