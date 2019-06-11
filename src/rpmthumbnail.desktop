@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+Name=RPM Files
+Name[XXX]=
+X-KDE-ServiceTypes=ThumbCreator
+MimeType=application/x-rpm;application/x-urpmi;
+X-KDE-Library=rpmthumbnail
+CacheThumbnail=true
+IgnoreMaximumSize=true
